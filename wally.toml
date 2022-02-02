@@ -1,0 +1,14 @@
+[package]
+name = "mobyrblx/the-infection"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+Knit = "sleitnick/knit@1.0.9"
+ReplicaService = "brittonfischer/replicaservice@0.1.0"
+Loader = "sleitnick/loader@1.0.2"
+Fusion = "elttob/fusion@0.1.1-beta"
+
+[server-dependencies]
+ProfileService = "brittonfischer/profileservice@2.1.5"
