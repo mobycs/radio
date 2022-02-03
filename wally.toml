@@ -8,7 +8,7 @@ realm = "shared"
 Knit = "sleitnick/knit@1.0.9"
 ReplicaService = "brittonfischer/replicaservice@0.1.0"
 Loader = "sleitnick/loader@1.0.2"
-Fusion = "elttob/fusion@0.1.1-beta"
+Spring = "brittonfischer/spring@0.1.0"
 
 [server-dependencies]
 ProfileService = "brittonfischer/profileservice@2.1.5"
