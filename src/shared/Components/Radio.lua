@@ -9,7 +9,7 @@ local Radio = Component.new({
 
 function Radio:Construct()
 	self.Spring = Spring.new(0)
-	self.Spring.Damper = 0.6
+	self.Spring.Damper = 1
 	self.Spring.Speed = 32
 end
 
