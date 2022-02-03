@@ -1,0 +1,26 @@
+{
+	"name": "Radio",
+	"tree": {
+		"$className": "DataModel",
+		"ServerScriptService": {
+			"$path": "src/server"
+		},
+
+		"ServerStorage": {
+			"$path": "models"
+		},
+
+		"ReplicatedStorage": {
+			"$path": "src/shared",
+			"Packages": {
+				"$path": "Packages"
+			}
+		},
+		
+		"StarterPlayer": {
+			"StarterPlayerScripts": {
+				"$path": "src/client"
+			}
+		}
+	}
+}

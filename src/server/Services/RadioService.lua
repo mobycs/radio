@@ -1,11 +1,11 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local CollectiveService = game:GetService("CollectionService")
+local CollectionService = game:GetService("CollectionService")
 local ServerStorage = game:GetService("ServerStorage")
 local Players = game:GetService("Players")
 
-local Knit = ReplicatedStorage.Packages.Knit)
+local Knit = require(ReplicatedStorage.Packages.Knit)
 
-local RadioService = Knir.CreateService {
+local RadioService = Knit.CreateService {
 	Name = "RadioService",
 	Client = {}
 }
@@ -46,7 +46,7 @@ function RadioService:GetSound(character: Model, soundId: string)
 	end
 end
 
-function RadioService:MakeSound(radio: BasePart, sound: Sound)
+function RadioService:MakeSound(radio: BasePart, soundId: Sound)
 	local sound = Instance.new("Sound")
 	sound.Name = "RadioService"
 	sound.SoundId = soundId
@@ -70,7 +70,7 @@ local RADIO_MODEL = ServerStorage:WaitForChild("Radio")
 
 function RadioService:GiveRadio(character: Model)
 	local humanoid = character:FindFirstChildWhichIsA("Humanoid")
-	local torso = character:FindFirstChild("Torso") or character:FindFirstChildWhichIsA("UpperTorso")
+	local torso = character:FindFirstChild("Torso") or character:FindFirstChild("UpperTorso")
 
 	local radio = RADIO_MODEL:Clone()
 	CollectionService:AddTag(radio, "RadioComponent")

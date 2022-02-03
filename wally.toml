@@ -8,6 +8,7 @@ realm = "shared"
 Knit = "sleitnick/knit@1.0.9"
 ReplicaService = "brittonfischer/replicaservice@0.1.0"
 Loader = "sleitnick/loader@1.0.2"
+Component = "sleitnick/component@2.4.2"
 Spring = "brittonfischer/spring@0.1.0"
 
 [server-dependencies]
