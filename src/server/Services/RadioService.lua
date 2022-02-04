@@ -24,11 +24,20 @@ function RadioService.Client:Play(player: Player, soundId: string)
 	local sound: Sound = self.Server:GetSound(character, soundId)	
 	if sound then
 		sound:Play()
-		
-		return "Success!", true
 	end
-	
-	return "This failed sadly", false
+end	
+
+function RadioService.Client:Stop(player: Player)
+	local character: Model = player.Character or player.CharacterAdded:Wait()
+
+	if not character.Parent then
+		character.AncestryChanged:Wait()
+	end
+
+	local sound: Sound = self.Server:GetSound(character)	
+	if sound then
+		sound:Stop()
+	end
 end
 
 function RadioService.Client:Skip(player: Player, timePosition: number)
@@ -45,12 +54,8 @@ function RadioService.Client:Skip(player: Player, timePosition: number)
 	local sound: Sound = self.Server:GetSound(character)	
 	if sound then
 		sound.TimePosition = timePosition
-		return "Success!", true
 	end
-	
-	return "This failed sadly", false
 end
-
 
 function RadioService:GetSound(character: Model, soundId: string)
 	local radio = character:WaitForChild("Radio", 10)
@@ -69,9 +74,10 @@ end
 
 function RadioService:MakeSound(radio: BasePart, soundId: Sound)
 	local sound = Instance.new("Sound")
-	sound.Name = "RadioService"
+	sound.Name = "RadioSound"
 	sound.SoundId = soundId or sound.SoundId
-	sound.Volume = 1
+	sound.Volume = 0.5
+	sound.Looped = true
 	sound.Parent = radio
 
 	return sound
