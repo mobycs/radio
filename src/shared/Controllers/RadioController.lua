@@ -24,7 +24,7 @@ function RadioController:Start()
 	local SoundId = State(152745539)
 
 	return New "ScreenGui" {
-		Parent = game.Players.LocalPlayer.PlayerGui
+		Parent = game.Players.LocalPlayer.PlayerGui,
 
 		Name = "Radio",
 		ResetOnSpawn = false,
@@ -47,8 +47,9 @@ function RadioController:Start()
 						Name = "SoundId",
 					
 						AnchorPoint = Vector2.new(0.5, 0.5),
-						Position = UDim.fromScale(0.5, 0.5),
+						Position = UDim2.fromScale(0.5, 0.5),
 						Size = UDim2.fromScale(1, 0.1),
+						Text = SoundId:get(),
 	
 						PlaceholderText = "Enter SoundId here",
 						[OnChange "Text"] = function(text)

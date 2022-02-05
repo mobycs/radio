@@ -23,8 +23,8 @@ function Radio:HeartbeatUpdate()
 	if not self.Sound then
 		self.Sound = self.Instance:FindFirstChildWhichIsA("Sound")
 	else
-		self.Spring.Target = self.Sound.PlaybackLoudness / 1000
-		self.Mesh.Scale = self.Size + Vector3.new(0.2, 0.2, 0.2) * self.Spring.Position
+		self.Spring.Target = self.Sound.PlaybackLoudness / 5000
+		self.Mesh.Scale = self.Size * (1+self.Spring.Position)
 	end
 end
 
